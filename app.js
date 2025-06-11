@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
 const PORT = 6969;
+const routeHandler = require('./routes/movies.router.js');
 
-app.get('/',(req,res)=>{
-    res.send('Welcome to the home page')
-});
+app.use('/movies',routeHandler);
+
 
 app.listen(PORT,()=>{
     console.log(`Server is running at http://localhost:${PORT}`);
